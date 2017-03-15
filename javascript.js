@@ -1,26 +1,25 @@
 
-// $.ajax({
-//   type: "GET",
-//   url: "https://ign-apis.herokuapp.com/articles",
-//   crossDomain: true,
-//   dataType: 'jsonp',
-//   success: function(result) {
-//     let headline = result.data[0].metadata.headline;
-//     $(document.body).append(headline);
-//   },
-//   error: function() {
-//     console.log("didn't work");
-//   }
-// });
+$.ajax({
+  type: "GET",
+  url: "https://ign-apis.herokuapp.com/videos",
+  crossDomain: true,
+  dataType: 'jsonp',
+  success: function(result) {
+    let videos = result;
+    console.log(videos);
+  },
+  error: function() {
+    console.log("didn't work");
+  }
+});
 
-//list-item (<li>)
-  //list-item-number (<div>)
-    //(<p>)
-  //list-item-text (<div>)
-    //(<p>)
-  //list-item-time (<div>)
-    //(<p>)
+let sampleObj = {
+  duration: "1:47",
+  headline: "This is a sample headline",
+  subheadline: "And this is also a sample!"
+};
 
+for (var i = 0; i < 9; i++) {
   let listItem = "<li class='list-item'</li>";
   $("#list").append(listItem);
 
@@ -30,14 +29,15 @@
   let listItemText = "<div class='list-item-text'></div>'";
   $(".list-item:last").append(listItemText);
 
-  let listItemTime = "<div class='list-item-time'></div>'";
+  let listItemTime = "<div class='list-item-time'></div>";
   $(".list-item:last").append(listItemTime);
 
-  let listItemNumberPTag = "<p>02</p>";
+  let listItemNumberPTag = `<p>${'0'+(i+1)}</p>`;
   $(".list-item-number:last").append(listItemNumberPTag);
 
-  let listItemTextPTag = "<p>This text is from jQuery!<br>And so is this!</p>";
+  let listItemTextPTag = `<p>${sampleObj.headline}<br>${sampleObj.subheadline}</p>`;
   $(".list-item-text:last").append(listItemTextPTag);
 
-  let listItemTimePTag = "<p>2:39</p>";
+  let listItemTimePTag = `<p>${sampleObj.duration}</p>`;
   $(".list-item-time:last").append(listItemTimePTag);
+}
