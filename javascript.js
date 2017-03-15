@@ -6,9 +6,20 @@ let listItem;
 let listItemNumber;
 let listItemText;
 let listItemTime;
-let listItemTextPTag;
+let listItemTextPTag1;
+let listItemTextPTag2;
 let listItemNumberPTag;
 let listItemTimePTag;
+let time;
+
+let secondsToTime = function(seconds) {
+  let timeMinutes = (Math.floor(seconds / 60)).toString();
+  let timeSeconds = (Math.floor(seconds % 60)).toString();
+  if(timeSeconds.length === 1) {
+    timeSeconds = "0" + timeSeconds;
+  }
+  return timeMinutes + ":" + timeSeconds;
+};
 
 $.ajax({
   type: "GET",
@@ -21,6 +32,9 @@ $.ajax({
     videos.data.forEach(function(obj,idx) {
 
       console.log("data elements reviewed");
+
+      time = secondsToTime(obj.metadata.duration);
+
       listItem = "<li class='list-item'</li>";
       $("#list").append(listItem);
 
@@ -40,10 +54,13 @@ $.ajax({
       }
       $(".list-item-number:last").append(listItemNumberPTag);
 
-      listItemTextPTag = `<p>${obj.metadata.name}</p>`;
-      $(".list-item-text:last").append(listItemTextPTag);
+      listItemTextPTag1 = "<p class='list-item-text-p1'>" + obj.metadata.name + "</p>";
+      $(".list-item-text:last").append(listItemTextPTag1);
 
-      listItemTimePTag = `<p>${obj.metadata.duration}</p>`;
+      listItemTextPTag2 = "<p class='list-item-text-p2'>" + obj.metadata.description + "</p>";
+      $(".list-item-text:last").append(listItemTextPTag2);
+
+      listItemTimePTag = `<p>${time}</p>`;
       $(".list-item-time:last").append(listItemTimePTag);
     });
 
@@ -61,8 +78,8 @@ $.ajax({
     listItemTime = "<div class='list-item-time'></div>";
     $(".list-item:last").append(listItemTime);
 
-    listItemTextPTag = `<p>An error occured.</p>`;
-    $(".list-item-text:last").append(listItemTextPTag);
+    listItemTextPTag1 = `<p>An error occured.</p>`;
+    $(".list-item-text:last").append(listItemTextPTag1);
   }
 });
 
@@ -71,9 +88,6 @@ let sampleObj = {
   headline: "This is a sample headline",
   subheadline: "And this is also a sample!"
 };
-
-
-
 
   // let listItem = "<li class='list-item'</li>";
   // $("#list").append(listItem);

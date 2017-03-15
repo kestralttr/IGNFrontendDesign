@@ -7,9 +7,10 @@ body {
   background-color: white;
   width: 98%;
   margin: 0 auto;
-  /*height: 100px;*/
-  /*border-radius: 3px;*/
+  border-radius: 3px;
   text-align: center;
+  max-width: 600px;
+  min-width: 320px;
 }
 
 .spacing-1 {
@@ -20,11 +21,11 @@ body {
 
 #media-selector-container {
   display: table;
-  /*border-collapse: collapse;*/
+  border-collapse: collapse;
   margin: 0 auto;
   height: 30px;
   background-color: red;
-  /*border-radius: 30px;*/
+  border-radius: 30px;
   overflow: hidden;
 }
 
@@ -51,6 +52,10 @@ body {
   cursor: pointer;
 }
 
+#video-selector-container {
+  background-color: blue;
+}
+
 #list-container {
 
 }
@@ -66,8 +71,18 @@ body {
   height: 50px;
   list-style: none;
   /*border: 2px solid purple;*/
-  /*border-bottom: 1px solid grey;*/
-  /*overflow: hidden;*/
+  border-bottom: 1px solid grey;
+  overflow: hidden;
+}
+
+.list-item:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.list-item:last-of-type {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .list-item-number {
@@ -82,8 +97,9 @@ body {
 
 .list-item-number p {
   vertical-align: text-top;
-  margin: 0 0 0 0;
-  line-height: 25px;
+  margin: 8px 0 0 0;
+  /*line-height: 30px;*/
+  font-size: 14px;
 }
 
 .list-item-text {
@@ -96,9 +112,25 @@ body {
 }
 
 .list-item-text p {
-  vertical-align: text-top;
+
+}
+
+.list-item-text-p1 {
+  vertical-align: text-bottom;
+  margin: 8px 0 0 0;
+  /*line-height: 30px;*/
+  height:20px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.list-item-text-p2 {
+  vertical-align: text-bottom;
   margin: 0 0 0 0;
-  line-height: 25px;
+  /*line-height: 30px;*/
+  height:20px;
+  overflow: hidden;
+  font-size: 14px;
 }
 
 .list-item-time {
@@ -109,6 +141,9 @@ body {
   right: 0;
   width:50px;
   height: 50px;
+  font-size: 12px;
+  margin: 13px 0 0 0;
+  padding: 0 0 0 0;
 }
 
 .list-item-time p {
