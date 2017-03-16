@@ -16,7 +16,7 @@ Second, I felt that even if the user knew exactly which game the image was refer
 
 So in my website, when a list item is clicked on, the text information stays where it is, and the image is appended below.  Furthermore, the selected list item info is permanently highlighted in a light grey (identical to the hover styling) so that the user knows exactly what information the image pertains to.  This allows the user to view all available information about the item in question, while knowing exactly what elements on the screen reference the selected item.
 
-### Expansion & Collapse Functionality
+### Expand & Collapse Functionality
 
 The example did not show the exact functionality of how list items would collapse, or how many would be permitted to stay expanded at any given time.  So I decided to design my website so that any list item could be expanded and then collapsed, and that only one list item could be expanded at any time.  Clicking on a collapsed list item while another one is expanded results in the already expanded list item collapsing.
 
@@ -44,10 +44,16 @@ I noticed that the red box that appears on the left side of the list items upon 
 
 In addition, I allowed the hover icon to appear next to an expanded list icon if the user is still hovering over it.  This way, the hover icon and the grey background color change work together to ensure the user always knows what has been selected and what is being hovered over.
 
-### Cursor Is A Pointer
+### Pointer Cursor Over Interactive Elements
 
 I didn't see this in the example, but I believe it's best practice to display a pointer whenever the cursor is hovering over anything that can be interacted with.  I made sure to do this in my site.
 
 ### Article Image Link Destination
 
-I could not find a URL property in the JSON for articles like I could with the videos.  So clicking on any article image will take the user to the main IGN articles page.
+I could not find a URL property in the JSON for articles like I could with the videos.  So clicking on any article image will take the user to the main IGN articles page.  All the video images open links to that video's URL when clicked.
+
+## Final Thoughts
+
+I enjoyed discovering how to emulate the provided example, and also what improvements might be made to make it more user friendly.
+
+With more information about exactly how this page would be utilized within IGN's website, I am confident I could innovate additional features.

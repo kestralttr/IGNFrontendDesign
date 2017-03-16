@@ -6,7 +6,7 @@ body {
 
 #master-container {
   background-color: white;
-  width: 98%;
+  width: 90%;
   margin: 0 auto;
   border-radius: 3px;
   text-align: center;
@@ -291,7 +291,7 @@ body {
   text-decoration: underline;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
 
   .list-item-number p {
     font-size: 16px;
