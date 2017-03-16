@@ -21,6 +21,7 @@ let mediumImageContainer;
 let mediumImage;
 let largeImageContainer;
 let largeImage;
+let brTag;
 
 let hoverFunction = function() {
   $( "li" ).hover(
@@ -40,9 +41,9 @@ let clickFunction = function() {
       console.log("contract activated");
       $(this).removeClass("expanded");
       //show text elements
-      $(this).find('.list-item-number').css("display","block");
-      $(this).find('.list-item-text').css("display","block");
-      $(this).find('.list-item-time').css("display","block");
+      $(this).find('.list-item-number').css("background-color","Transparent");
+      $(this).find('.list-item-text').css("background-color","Transparent");
+      $(this).find('.list-item-time').css("background-color","Transparent");
       //hide all thumbnails
       $(this).find('.small-image-container').css("display","none");
       $(this).find('.medium-image-container').css("display","none");
@@ -52,9 +53,9 @@ let clickFunction = function() {
     } else {
       console.log("expand activated");
 
-      $(".expanded").find('.list-item-number').css("display","block");
-      $(".expanded").find('.list-item-text').css("display","block");
-      $(".expanded").find('.list-item-time').css("display","block");
+      $(".expanded").find('.list-item-number').css("background-color","Transparent");
+      $(".expanded").find('.list-item-text').css("background-color","Transparent");
+      $(".expanded").find('.list-item-time').css("background-color","Transparent");
       //hide all thumbnails
       $(".expanded").find('.small-image-container').css("display","none");
       $(".expanded").find('.medium-image-container').css("display","none");
@@ -65,22 +66,19 @@ let clickFunction = function() {
 
       $(this).addClass("expanded");
       //hide text elements
-      $(this).find('.list-item-number').css("display","none");
-      $(this).find('.list-item-text').css("display","none");
-      $(this).find('.list-item-time').css("display","none");
+      $(this).find('.list-item-number').css("background-color","#dbdbdb");
+      $(this).find('.list-item-text').css("background-color","#dbdbdb");
+      $(this).find('.list-item-time').css("background-color","#dbdbdb");
       //show thumbnail
       if(window.innerWidth < 420) {
         $(this).find('.small-image-container').css("display","block");
         //modify elements
-        $(this).find('.hover-square').css("height","162px");
       } else if(window.innerWidth < 630) {
         $(this).find('.medium-image-container').css("display","block");
         //modify elements
-        $(this).find('.hover-square').css("height","252px");
       } else {
         $(this).find('.large-image-container').css("display","block");
         //modify elements
-        $(this).find('.hover-square').css("height","342px");
       }
     }
   });
