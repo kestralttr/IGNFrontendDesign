@@ -94,7 +94,7 @@ let secondsToTime = function(seconds) {
 const getVideos = function() {
   $.ajax({
     type: "GET",
-    url: "https://ign-apis.herokuapp.com/videos" + `?startIndex=${startIndex}&count=${count}`,
+    url: "https://ign-apis.herokuapp.com/videos" + "?startIndex=" + startIndex + "&count=" + count,
     crossDomain: true,
     dataType: 'jsonp',
     success: function(result) {
