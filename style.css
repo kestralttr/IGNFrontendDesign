@@ -237,10 +237,6 @@ body {
   overflow: hidden;
 }
 
-.list-item-text p {
-
-}
-
 .list-item-text-p1 {
   vertical-align: text-bottom;
   margin: 8px 0 0 0;
@@ -293,4 +289,28 @@ body {
 
 .see-more-link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+
+  .list-item-number p {
+    font-size: 16px;
+  }
+
+  .list-item-text-p1 {
+    font-size: 16px;
+  }
+
+  .list-item-text-p2 {
+    font-size: 14px;
+  }
+
+  .list-item-time p {
+    font-size: 14px;
+  }
+
+  .see-more-link {
+    font-size: 12px;
+  }
+
 }
