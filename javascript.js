@@ -218,19 +218,19 @@ const getArticles = function() {
         cta = "<div class='cta' style='display:none;'>GO TO IGN</div>";
         $(".list-item:last").append(cta);
 
-        smallImageContainer = `<a href='${obj.metadata.url}' style='display: none;' target='_blank' class='small-image-container'></a>`;
+        smallImageContainer = `<a href='http://www.ign.com/articles' style='display: none;' target='_blank' class='small-image-container'></a>`;
         $(".list-item:last").append(smallImageContainer);
 
         smallImage = `<div class='small-image' style="background: url('${obj.thumbnails[0].url}') no-repeat center;"></div>`;
         $(".small-image-container:last").append(smallImage);
 
-        mediumImageContainer = `<a href='${obj.metadata.url}' style='display: none;' target='_blank' class='medium-image-container'></a>`;
+        mediumImageContainer = `<a href='http://www.ign.com/articles' style='display: none;' target='_blank' class='medium-image-container'></a>`;
         $(".list-item:last").append(mediumImageContainer);
 
         mediumImage = `<div class='medium-image' style="background: url('${obj.thumbnails[1].url}') no-repeat center;"></div>`;
         $(".medium-image-container:last").append(mediumImage);
 
-        largeImageContainer = `<a href='${obj.metadata.url}' style='display: none;' target='_blank' class='large-image-container'></a>`;
+        largeImageContainer = `<a href='http://www.ign.com/articles' style='display: none;' target='_blank' class='large-image-container'></a>`;
         $(".list-item:last").append(largeImageContainer);
 
         largeImage = `<div class='large-image' style="background: url('${obj.thumbnails[2].url}') no-repeat center;"></div>`;
