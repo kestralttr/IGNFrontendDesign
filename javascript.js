@@ -15,6 +15,12 @@ let seeMoreLink;
 let hoverSquare;
 let imageContainer;
 let itemImage;
+let smallImageContainer;
+let smallImage;
+let mediumImageContainer;
+let mediumImage;
+let largeImageContainer;
+let largeImage;
 
 let hoverFunction = function() {
   $( "li" ).hover(
@@ -33,17 +39,29 @@ let clickFunction = function() {
     if ( $(this).hasClass("expanded")) {
       console.log("contract activated");
       $(this).removeClass("expanded");
+      //show text elements
       $(this).find('.list-item-number').css("display","block");
       $(this).find('.list-item-text').css("display","block");
       $(this).find('.list-item-time').css("display","block");
+      //hide all thumbnails
+      $(this).find('.small-image-container').css("display","none");
+      $(this).find('.medium-image-container').css("display","none");
+      $(this).find('.large-image-container').css("display","none");
+      //modify elements
+      $(this).find('.hover-square').css("height","40px");
+
 
     } else {
       console.log("expand activated");
       $(this).addClass("expanded");
+      //hide text elements
       $(this).find('.list-item-number').css("display","none");
       $(this).find('.list-item-text').css("display","none");
       $(this).find('.list-item-time').css("display","none");
-
+      //show thumbnail
+      $(this).find('.small-image-container').css("display","block");
+      //modify elements
+      $(this).find('.hover-square').css("height","162px");
     }
   });
 };
@@ -84,6 +102,12 @@ $.ajax({
       listItemTime = "<div class='list-item-time'></div>";
       $(".list-item:last").append(listItemTime);
 
+      smallImageContainer = `<a href='${obj.metadata.url}' style='display: none;' target='_blank' class='small-image-container'></a>`;
+      $(".list-item:last").append(smallImageContainer);
+
+      smallImage = `<div class='small-image' style="background: url('${obj.thumbnails[0].url}') center;"></div>`;
+      $(".small-image-container:last").append(smallImage);
+
       if(idx+1 < 10) {
         listItemNumberPTag = "<p>" + '0' + (idx+1) + "</p>";
       } else {
@@ -99,6 +123,7 @@ $.ajax({
 
       listItemTimePTag = `<p>${time}</p>`;
       $(".list-item-time:last").append(listItemTimePTag);
+
     });
     //See More Videos goes here
     listItem = "<li class='list-item'</li>";

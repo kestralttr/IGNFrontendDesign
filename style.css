@@ -100,12 +100,46 @@ body {
 }
 
 .expanded {
-  height:200px;
+  height:172px;
   background-color: black;
 }
 
 .expanded:hover {
   background-color: black;
+}
+
+.small-image-container {
+  margin: 0 auto;
+  height:172px;
+  width: 306px;
+}
+
+.small-image {
+  height:172px;
+  width: 306px;
+  background-size:contain;
+  border: 3px solid white;
+  box-sizing: border-box;
+}
+
+.medium-image-container {
+
+}
+
+.medium-image {
+
+}
+
+.large-image-container {
+
+}
+
+.large-image {
+
+}
+
+.image-container-show {
+  display: block;
 }
 
 .list-item:last-of-type {
