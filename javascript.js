@@ -35,7 +35,7 @@ let hoverFunction = function() {
 };
 
 let clickFunction = function() {
-  $("li").click(function() {
+  $(".list-item").click(function() {
     if ( $(this).hasClass("expanded")) {
       console.log("contract activated");
       $(this).removeClass("expanded");
@@ -59,9 +59,19 @@ let clickFunction = function() {
       $(this).find('.list-item-text').css("display","none");
       $(this).find('.list-item-time').css("display","none");
       //show thumbnail
-      $(this).find('.small-image-container').css("display","block");
-      //modify elements
-      $(this).find('.hover-square').css("height","162px");
+      if(window.innerWidth < 420) {
+        $(this).find('.small-image-container').css("display","block");
+        //modify elements
+        $(this).find('.hover-square').css("height","162px");
+      } else if(window.innerWidth < 630) {
+        $(this).find('.medium-image-container').css("display","block");
+        //modify elements
+        $(this).find('.hover-square').css("height","252px");
+      } else {
+        $(this).find('.large-image-container').css("display","block");
+        //modify elements
+        $(this).find('.hover-square').css("height","342px");
+      }
     }
   });
 };
@@ -105,8 +115,20 @@ $.ajax({
       smallImageContainer = `<a href='${obj.metadata.url}' style='display: none;' target='_blank' class='small-image-container'></a>`;
       $(".list-item:last").append(smallImageContainer);
 
-      smallImage = `<div class='small-image' style="background: url('${obj.thumbnails[0].url}') center;"></div>`;
+      smallImage = `<div class='small-image' style="background: url('${obj.thumbnails[0].url}') no-repeat center;"></div>`;
       $(".small-image-container:last").append(smallImage);
+
+      mediumImageContainer = `<a href='${obj.metadata.url}' style='display: none;' target='_blank' class='medium-image-container'></a>`;
+      $(".list-item:last").append(mediumImageContainer);
+
+      mediumImage = `<div class='medium-image' style="background: url('${obj.thumbnails[1].url}') no-repeat center;"></div>`;
+      $(".medium-image-container:last").append(mediumImage);
+
+      largeImageContainer = `<a href='${obj.metadata.url}' style='display: none;' target='_blank' class='large-image-container'></a>`;
+      $(".list-item:last").append(largeImageContainer);
+
+      largeImage = `<div class='large-image' style="background: url('${obj.thumbnails[2].url}') no-repeat center;"></div>`;
+      $(".large-image-container:last").append(largeImage);
 
       if(idx+1 < 10) {
         listItemNumberPTag = "<p>" + '0' + (idx+1) + "</p>";
@@ -126,11 +148,11 @@ $.ajax({
 
     });
     //See More Videos goes here
-    listItem = "<li class='list-item'</li>";
+    listItem = "<li class='list-item-see-more'</li>";
     $("#list").append(listItem);
 
-    listItemText = "<div class='list-item-text'></div>";
-    $(".list-item:last").append(listItemText);
+    listItemText = "<div  class='list-item-text'></div>";
+    $(".list-item-see-more").append(listItemText);
 
     seeMoreLink = "<a target='_blank' href='http://www.ign.com/videos' class='see-more-link'>See More Videos...</a>";
     $(".list-item-text:last").append(seeMoreLink);
