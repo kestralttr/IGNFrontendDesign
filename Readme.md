@@ -1,5 +1,7 @@
 # IGN Frontend Design
 
+#### Please use Google Chrome to ensure the best user experience.
+
 The challenge issued here was to create a website that emulated the example found [here](http://www.ign.com/code-foo/2017/frontend-design.gif).
 
 My finished build can be found [here](https://kestralttr.github.io/IGNFrontendDesign/).
