@@ -90,11 +90,22 @@ body {
   height: 50px;
   list-style: none;
   border-bottom: 1px solid rgb(227,227,227);
-  overflow: hidden;
+  /*overflow: hidden;*/
+  text-align: center;
+}
+
+.list-item:hover {
+  background-color: #dbdbdb;
+  cursor: pointer;
 }
 
 .expanded {
-  /*height:50px;*/
+  height:200px;
+  background-color: black;
+}
+
+.expanded:hover {
+  background-color: black;
 }
 
 .list-item:last-of-type {
@@ -103,11 +114,6 @@ body {
 
 .list-item:nth-last-child(2) {
   border-bottom: 1px solid white;
-}
-
-.list-item:hover {
-  background-color: #dbdbdb;
-  cursor: pointer;
 }
 
 .list-item:last-of-type:hover {
@@ -144,6 +150,7 @@ body {
   left: 0;
   width:40px;
   height: 50px;
+  overflow: hidden;
 }
 
 .list-item-number p {
@@ -160,7 +167,8 @@ body {
   left:40px;
   right: 50px;
   height: 50px;
-  /*border: 1px solid orange;*/
+  text-align: left;
+  overflow: hidden;
 }
 
 .list-item-text p {
@@ -188,8 +196,7 @@ body {
 }
 
 .list-item-time {
-  /*border:1px solid green;*/
-  text-align: center;
+  overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;

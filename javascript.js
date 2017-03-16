@@ -13,6 +13,8 @@ let listItemTimePTag;
 let time;
 let seeMoreLink;
 let hoverSquare;
+let imageContainer;
+let itemImage;
 
 let hoverFunction = function() {
   $( "li" ).hover(
@@ -32,12 +34,16 @@ let clickFunction = function() {
       console.log("contract activated");
       $(this).removeClass("expanded");
       $(this).find('.list-item-number').css("display","block");
-      $(this).find('.list-item-number-PTag').css("display","block");
+      $(this).find('.list-item-text').css("display","block");
+      $(this).find('.list-item-time').css("display","block");
+
     } else {
       console.log("expand activated");
       $(this).addClass("expanded");
       $(this).find('.list-item-number').css("display","none");
-      $(this).find('.list-item-number-PTag').css("display","none");
+      $(this).find('.list-item-text').css("display","none");
+      $(this).find('.list-item-time').css("display","none");
+
     }
   });
 };
