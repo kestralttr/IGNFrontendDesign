@@ -18,12 +18,28 @@ let hoverFunction = function() {
   $( "li" ).hover(
     function() {
       $(this).find(".hover-square").css("background-color","rgb(187,19,19)");
-      console.log("hovering!");
+      // console.log("hovering!");
     }, function() {
-      console.log("no longer hovering");
+      // console.log("no longer hovering");
       $(this).find(".hover-square").css("background-color","Transparent");
     }
   );
+};
+
+let clickFunction = function() {
+  $("li").click(function() {
+    if ( $(this).hasClass("expanded")) {
+      console.log("contract activated");
+      $(this).removeClass("expanded");
+      $(this).find('.list-item-number').css("display","block");
+      $(this).find('.list-item-number-PTag').css("display","block");
+    } else {
+      console.log("expand activated");
+      $(this).addClass("expanded");
+      $(this).find('.list-item-number').css("display","none");
+      $(this).find('.list-item-number-PTag').css("display","none");
+    }
+  });
 };
 
 let secondsToTime = function(seconds) {
@@ -85,10 +101,11 @@ $.ajax({
     listItemText = "<div class='list-item-text'></div>";
     $(".list-item:last").append(listItemText);
 
-    seeMoreLink = "<a class='see-more-link'>See More Videos...</a>";
+    seeMoreLink = "<a target='_blank' href='http://www.ign.com/videos' class='see-more-link'>See More Videos...</a>";
     $(".list-item-text:last").append(seeMoreLink);
 
     hoverFunction();
+    clickFunction();
   },
   error: function() {
     listItem = "<li class='list-item'</li>";
@@ -103,28 +120,7 @@ $.ajax({
     listItemTime = "<div class='list-item-time'></div>";
     $(".list-item:last").append(listItemTime);
 
-    listItemTextPTag1 = `<p>An error occured.</p>`;
+    listItemTextPTag1 = "<p class='list-item-text-p1'>An error occured.</p>";
     $(".list-item-text:last").append(listItemTextPTag1);
   }
 });
-
-  // let listItem = "<li class='list-item'</li>";
-  // $("#list").append(listItem);
-  //
-  // let listItemNumber = "<div class='list-item-number'></div>";
-  // $(".list-item:last").append(listItemNumber);
-  //
-  // let listItemText = "<div class='list-item-text'></div>'";
-  // $(".list-item:last").append(listItemText);
-  //
-  // let listItemTime = "<div class='list-item-time'></div>";
-  // $(".list-item:last").append(listItemTime);
-  //
-  // let listItemNumberPTag = `<p>${'0'+(i+1)}</p>`;
-  // $(".list-item-number:last").append(listItemNumberPTag);
-  //
-  // let listItemTextPTag = `<p>${sampleObj.headline}<br>${sampleObj.subheadline}</p>`;
-  // $(".list-item-text:last").append(listItemTextPTag);
-  //
-  // let listItemTimePTag = `<p>${sampleObj.duration}</p>`;
-  // $(".list-item-time:last").append(listItemTimePTag);
