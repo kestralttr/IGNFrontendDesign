@@ -46,7 +46,7 @@ body {
   cursor: pointer;
 }
 
-#video-selector-container {
+#videos-selector {
   box-sizing: border-box;
   background-color: rgb(187,19,19);
   color: white;
@@ -57,11 +57,11 @@ body {
   font-size: 14px;
 }
 
-#video-selector-container:hover {
+#videos-selector:hover {
   text-decoration: underline;
 }
 
-#article-selector-container {
+#articles-selector {
   box-sizing: border-box;
   background-color: none;
   color: rgb(187,19,19);
@@ -72,7 +72,7 @@ body {
   font-size: 14px;
 }
 
-#article-selector-container:hover {
+#articles-selector:hover {
   text-decoration: underline;
 }
 
@@ -98,11 +98,10 @@ body {
   position: relative;
   height: 30px;
   list-style: none;
-  border-bottom: 1px solid rgb(227,227,227);
-  /*overflow: hidden;*/
   text-align: center;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  text-decoration: none;
 }
 
 .list-item:hover {
@@ -206,11 +205,6 @@ body {
   /*rgb(187,19,19);*/
 }
 
-.list-item:last-of-type a:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 .list-item:last-of-type {
 
 }
@@ -294,4 +288,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 10px;
+  text-decoration: none;
+}
+
+.see-more-link:hover {
+  text-decoration: underline;
 }
