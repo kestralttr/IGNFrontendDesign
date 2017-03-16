@@ -111,7 +111,8 @@ body {
   left:-5px;
   z-index: 5;
   overflow: hidden;
-  background-color: rgb(187,19,19);
+  background-color: Transparent;
+  /*rgb(187,19,19);*/
 }
 
 .list-item:last-of-type a:hover {

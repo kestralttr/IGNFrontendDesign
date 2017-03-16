@@ -12,6 +12,19 @@ let listItemNumberPTag;
 let listItemTimePTag;
 let time;
 let seeMoreLink;
+let hoverSquare;
+
+let hoverFunction = function() {
+  $( "li" ).hover(
+    function() {
+      $(this).find(".hover-square").css("background-color","rgb(187,19,19)");
+      console.log("hovering!");
+    }, function() {
+      console.log("no longer hovering");
+      $(this).find(".hover-square").css("background-color","Transparent");
+    }
+  );
+};
 
 let secondsToTime = function(seconds) {
   let timeMinutes = (Math.floor(seconds / 60)).toString();
@@ -32,12 +45,13 @@ $.ajax({
     console.log(videos);
     videos.data.forEach(function(obj,idx) {
 
-      console.log("data elements reviewed");
-
       time = secondsToTime(obj.metadata.duration);
 
       listItem = "<li class='list-item'</li>";
       $("#list").append(listItem);
+
+      hoverSquare = "<div class='hover-square'></div>";
+      $(".list-item:last").append(hoverSquare);
 
       listItemNumber = "<div class='list-item-number'></div>";
       $(".list-item:last").append(listItemNumber);
@@ -73,6 +87,8 @@ $.ajax({
 
     seeMoreLink = "<a class='see-more-link'>See More Videos...</a>";
     $(".list-item-text:last").append(seeMoreLink);
+
+    hoverFunction();
   },
   error: function() {
     listItem = "<li class='list-item'</li>";
@@ -91,14 +107,6 @@ $.ajax({
     $(".list-item-text:last").append(listItemTextPTag1);
   }
 });
-
-$( "li" ).hover(
-  function() {
-    $( this ).append( $( "<div class='hover-square'></div>" ) );
-  }, function() {
-    $( this ).find( ".hover-square" ).remove();
-  }
-);
 
   // let listItem = "<li class='list-item'</li>";
   // $("#list").append(listItem);
