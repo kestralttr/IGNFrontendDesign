@@ -22,6 +22,7 @@ let mediumImage;
 let largeImageContainer;
 let largeImage;
 let brTag;
+let cta;
 
 let hoverFunction = function() {
   $( "li" ).hover(
@@ -48,6 +49,7 @@ let clickFunction = function() {
       $(this).find('.small-image-container').css("display","none");
       $(this).find('.medium-image-container').css("display","none");
       $(this).find('.large-image-container').css("display","none");
+      $(this).find('.cta').css("display","none");
       //modify elements
       $(this).find('.hover-square').css("height","40px");
     } else {
@@ -60,6 +62,7 @@ let clickFunction = function() {
       $(".expanded").find('.small-image-container').css("display","none");
       $(".expanded").find('.medium-image-container').css("display","none");
       $(".expanded").find('.large-image-container').css("display","none");
+      $(".expanded").find('.cta').css("display","none");
       //modify elements
       $(".expanded").find('.hover-square').css("height","40px");
       $(".expanded").removeClass("expanded");
@@ -72,14 +75,12 @@ let clickFunction = function() {
       //show thumbnail
       if(window.innerWidth < 420) {
         $(this).find('.small-image-container').css("display","block");
-        //modify elements
       } else if(window.innerWidth < 630) {
         $(this).find('.medium-image-container').css("display","block");
-        //modify elements
       } else {
         $(this).find('.large-image-container').css("display","block");
-        //modify elements
       }
+      $(this).find('.cta').css("display","block");
     }
   });
 };
@@ -119,6 +120,9 @@ $.ajax({
 
       listItemTime = "<div class='list-item-time'></div>";
       $(".list-item:last").append(listItemTime);
+
+      cta = "<div class='cta' style='display:none;'>GO TO IGN</div>";
+      $(".list-item:last").append(cta);
 
       smallImageContainer = `<a href='${obj.metadata.url}' style='display: none;' target='_blank' class='small-image-container'></a>`;
       $(".list-item:last").append(smallImageContainer);
