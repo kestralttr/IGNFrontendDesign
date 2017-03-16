@@ -2,6 +2,8 @@
 
 The challenge issued here was to create a website that emulated the example found [here](http://www.ign.com/code-foo/2017/frontend-design.gif).
 
+My finished build can be found [here](https://kestralttr.github.io/IGNFrontendDesign/).
+
 While I matched the design as closely as possible, I did change and add some functionality/styling, which I have listed and explained my reasoning for below:
 
 ## Major Changes
