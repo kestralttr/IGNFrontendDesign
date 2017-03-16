@@ -49,10 +49,20 @@ let clickFunction = function() {
       $(this).find('.large-image-container').css("display","none");
       //modify elements
       $(this).find('.hover-square').css("height","40px");
-
-
     } else {
       console.log("expand activated");
+
+      $(".expanded").find('.list-item-number').css("display","block");
+      $(".expanded").find('.list-item-text').css("display","block");
+      $(".expanded").find('.list-item-time').css("display","block");
+      //hide all thumbnails
+      $(".expanded").find('.small-image-container').css("display","none");
+      $(".expanded").find('.medium-image-container').css("display","none");
+      $(".expanded").find('.large-image-container').css("display","none");
+      //modify elements
+      $(".expanded").find('.hover-square').css("height","40px");
+      $(".expanded").removeClass("expanded");
+
       $(this).addClass("expanded");
       //hide text elements
       $(this).find('.list-item-number').css("display","none");
