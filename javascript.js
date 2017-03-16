@@ -11,6 +11,7 @@ let listItemTextPTag2;
 let listItemNumberPTag;
 let listItemTimePTag;
 let time;
+let seeMoreLink;
 
 let secondsToTime = function(seconds) {
   let timeMinutes = (Math.floor(seconds / 60)).toString();
@@ -63,7 +64,15 @@ $.ajax({
       listItemTimePTag = `<p>${time}</p>`;
       $(".list-item-time:last").append(listItemTimePTag);
     });
+    //See More Videos goes here
+    listItem = "<li class='list-item'</li>";
+    $("#list").append(listItem);
 
+    listItemText = "<div class='list-item-text'></div>";
+    $(".list-item:last").append(listItemText);
+
+    seeMoreLink = "<a class='see-more-link'>See More Videos...</a>";
+    $(".list-item-text:last").append(seeMoreLink);
   },
   error: function() {
     listItem = "<li class='list-item'</li>";
@@ -83,11 +92,13 @@ $.ajax({
   }
 });
 
-let sampleObj = {
-  duration: "1:47",
-  headline: "This is a sample headline",
-  subheadline: "And this is also a sample!"
-};
+$( "li" ).hover(
+  function() {
+    $( this ).append( $( "<div class='hover-square'></div>" ) );
+  }, function() {
+    $( this ).find( ".hover-square" ).remove();
+  }
+);
 
   // let listItem = "<li class='list-item'</li>";
   // $("#list").append(listItem);
