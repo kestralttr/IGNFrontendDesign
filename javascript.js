@@ -104,7 +104,7 @@ const getVideos = function() {
 
         time = secondsToTime(obj.metadata.duration);
 
-        listItem = "<li class='list-item'</li>";
+        listItem = "<li class='list-item'></li>";
         $("#list").append(listItem);
 
         hoverSquare = "<div class='hover-square'></div>";
@@ -200,7 +200,7 @@ const getArticles = function() {
       console.log(articles);
       articles.data.forEach(function(obj,idx) {
 
-        listItem = "<li class='list-item'</li>";
+        listItem = "<li class='list-item'></li>";
         $("#list").append(listItem);
 
         hoverSquare = "<div class='hover-square'></div>";
@@ -267,7 +267,7 @@ const getArticles = function() {
       listItemClickFunction();
     },
     error: function() {
-      listItem = "<li class='list-item'</li>";
+      listItem = "<li class='list-item'></li>";
       $("#list").append(listItem);
 
       listItemNumber = "<div class='list-item-number'></div>";
